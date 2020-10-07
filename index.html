@@ -8,30 +8,94 @@
 </head>
 <body>
   <main class="page-main">
-    <div class="page-main__wrapper">
-      <h1 class="page-main__header">Портфолио Junior-верстальщика</h1>
-      <div class="page-main__avatar-wrapper">
-        <img class="page-main__avatar" src="img/avatar.jpg" alt="Артём">
+    <article class="header">
+      <div class="header__wrapper">
+        <img src="img/avatar.png" width="120" height="121" alt="" class="header__avatar" />
+        <h1 class="header__title">Портфолио<br><span>Frontend-разработчика</span></h1>
       </div>
-      <h2 class="page-main__my-projects">Мои проекты</h2>
-      <ul class="page-main__project-list">
-        <li class="page-main__project-item">
-          <a href="https://sedona.studproject.ru" class="page-main__project-link">
-            <img class="page-main__project-image" src="img/sedona.png" alt="sedona">
-          </a>
+    </article>
+    <article class="about-me block">
+      <h2 class="about-me__title block__title">Кто я?</h2>
+      <div class="about-me__content">
+        <p class="block__text about-me__text">
+          Привет! Меня зовут Артём, мне 20 лет, и я начинающий Frontend-разработчик. Живу в городе Новосибирске.
+        </p>
+        <p class="block__text about-me__text">
+          Я восторге от красивых интерфейсов и чистого кода. Очень внимателен к мелочам, всегда укладываюсь в обещанные сроки.
+        </p>
+      </div>
+    </article>
+    <article class="offers block">
+      <h2 class="offers__title block__title">Что я могу предложить?</h2>
+      <ul class="offers__list">
+        <li class="offers__item">1. Вёрстка сайтов.</li>
+        <li class="offers__item">2. Оптимизация сайтов.</li>
+        <li class="offers__item">3. Программирование веб-интерфейсов.</li>
+        <li class="offers__item">4. Создание SPA (Single Page Application).</li>
+      </ul>
+    </article>
+    <article class="skills block">
+      <h2 class="skills__title block__title">Что я умею?</h2>
+      <ul class="skills__list skills__list--opened">
+        <li class="skills__item">
+          1. Вёрстка сайтов
+           <ul class="skills__item-extra-list">
+             <li class="skills__item-extra-item">
+               1.1 Семантическая разметка HTML5 (по методологии БЭМ), стилизация CSS3.
+             </li>
+             <li class="skills__item-extra-item">
+               1.2 Использование препроцессора (Sass/Less), сборщика (Gulp, Webpack). Автоматизация сборки проекта.
+             </li>
+             <li class="skills__item-extra-item">
+               1.3 Сетка на гридах и/или флексах.
+             </li>
+             <li class="skills__item-extra-item">
+               1.4 Адаптивная верстка (фиксированная или резиновая) под мобильные и/или планшеты.
+             </li>
+             <li class="skills__item-extra-item">
+               1.5 Адаптивные изображения.
+             </li>
+           </ul>
+          <button type="button">
+            <img src="" alt="">
+          </button>
         </li>
-        <li class="page-main__project-item">
-          <a href="https://pink.studproject.ru" class="page-main__project-link">
-            <img class="page-main__project-image" src="img/pink.png" alt="pink">
-          </a>
+        <li class="skills__item">2. Оптимизация сайтов</li>
+        <li class="skills__item">3. Программирование веб-интерфейсов</li>
+        <li class="skills__item">4. Создание SPA (Single Page Application)</li>
+      </ul>
+    </article>
+    <article class="studying block">
+      <h2 class="studying__title block__title">Где я учился?</h2>
+      <div class="studying__content">
+        <p class="block__text studying__text">
+          Большинство своих навыков веб-разработки я приобрел, обучаясь в HTML Academy на профессии React-разработчик.
+        </p>
+        <p class="block__text studying__text">
+          Также я учусь в новосибирском вузе НГТУ на третьем курсе направления “Информационные системы и технологии”.
+        </p>
+        <p class="block__text studying__text">
+          Кроме того, слежу за последними новостями сферы Frontend, слушая подкасты “Веб-стандарты”.
+        </p>
+      </div>
+    </article>
+    <article class="certificates block">
+      <h2 class="certificates__title block__title">Может сертификаты есть?</h2>
+      <ul class="certificates__list">
+        <li class="certificates__item">
+          <img src="img/certificate1.jpg" width="300" alt="" class="certificate__image">
         </li>
-        <li class="page-main__project-item">
-          <a href="https://mishka.studproject.ru" class="page-main__project-link">
-            <img class="page-main__project-image" src="img/mishka.png" alt="mishka">
-          </a>
+        <li class="certificates__item">
+          <img src="img/certificate2.jpg" width="300" alt="" class="certificate__image">
+        </li>
+        <li class="certificates__item">
+          <img src="img/certificate3.jpg" width="300" alt="" class="certificate__image">
+        </li>
+        <li class="certificates__item">
+          <img src="img/certificate4.jpg" width="300" alt="" class="certificate__image">
         </li>
       </ul>
-    </div>
+    </article>
   </main>
 </body>
 </html>
