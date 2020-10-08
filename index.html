@@ -36,10 +36,13 @@
     </article>
     <article class="skills block">
       <h2 class="skills__title block__title">Что я умею?</h2>
-      <ul class="skills__list skills__list--opened">
-        <li class="skills__item">
+      <ul class="skills__list">
+        <li class="skills__item skills__item--opened">
           1. Вёрстка сайтов
-           <ul class="skills__item-extra-list">
+          <button class="skills__item-rollup-btn" type="button">
+            <img src="img/icon-show.svg" alt="">
+          </button>
+          <ul class="skills__item-extra-list">
              <li class="skills__item-extra-item">
                1.1 Семантическая разметка HTML5 (по методологии БЭМ), стилизация CSS3.
              </li>
@@ -56,13 +59,64 @@
                1.5 Адаптивные изображения.
              </li>
            </ul>
-          <button type="button">
-            <img src="" alt="">
-          </button>
         </li>
-        <li class="skills__item">2. Оптимизация сайтов</li>
-        <li class="skills__item">3. Программирование веб-интерфейсов</li>
-        <li class="skills__item">4. Создание SPA (Single Page Application)</li>
+        <li class="skills__item">
+          2. Оптимизация сайтов
+          <button class="skills__item-rollup-btn" type="button">
+            <img src="img/icon-show.svg" alt="">
+          </button>
+          <ul class="skills__item-extra-list">
+            <li class="skills__item-extra-item">
+              2.1 Оптимизация изображений (адаптивная графика, ретиновая графика, векторная графика, изображения в формате .webp, сжатие .jpg  и .png без потери качества).
+            </li>
+            <li class="skills__item-extra-item">
+              2.2 Минификация всего кода.
+            </li>
+            <li class="skills__item-extra-item">
+              2.3 Прелоадинг файлов, необходимых для минимальной функциональности сайта (в первую очередь шрифты, стили, JS-код, а затем только графика).
+            </li>
+          </ul>
+        </li>
+        <li class="skills__item">
+          3. Программирование веб-интерфейсов
+          <button class="skills__item-rollup-btn" type="button">
+            <img src="img/icon-show.svg" alt="">
+          </button>
+          <ul class="skills__item-extra-list">
+            <li class="skills__item-extra-item">
+              3.1 Использование DOM API.
+            </li>
+            <li class="skills__item-extra-item">
+              3.2 Оживление и продвинутая валидация форм.
+            </li>
+            <li class="skills__item-extra-item">
+              3.3 Создание и настройка слайдеров и каруселей (в том числе бесконечных).
+            </li>
+            <li class="skills__item-extra-item">
+              3.4 Работа с сервером (AJAX, REST  API).
+            </li>
+            <li class="skills__item-extra-item">
+              3.5 Сборка кода с помощью Webpack.
+            </li>
+          </ul>
+        </li>
+        <li class="skills__item">
+          4. Создание SPA (Single Page Application)
+          <button class="skills__item-rollup-btn" type="button">
+            <img src="img/icon-show.svg" alt="">
+          </button>
+          <ul class="skills__item-extra-list">
+            <li class="skills__item-extra-item">
+              4.1 Разработка архитектуры веб-приложений на чистом JS.
+            </li>
+            <li class="skills__item-extra-item">
+              4.2 Использование паттернов проектирования и принципов ООП (насколько это позволяет JS).
+            </li>
+            <li class="skills__item-extra-item">
+              4.3 Работа с сетью (Promise).
+            </li>
+          </ul>
+        </li>
       </ul>
     </article>
     <article class="studying block">
@@ -80,22 +134,55 @@
       </div>
     </article>
     <article class="certificates block">
-      <h2 class="certificates__title block__title">Может сертификаты есть?</h2>
-      <ul class="certificates__list">
-        <li class="certificates__item">
-          <img src="img/certificate1.jpg" width="300" alt="" class="certificate__image">
-        </li>
-        <li class="certificates__item">
-          <img src="img/certificate2.jpg" width="300" alt="" class="certificate__image">
-        </li>
-        <li class="certificates__item">
-          <img src="img/certificate3.jpg" width="300" alt="" class="certificate__image">
-        </li>
-        <li class="certificates__item">
-          <img src="img/certificate4.jpg" width="300" alt="" class="certificate__image">
-        </li>
-      </ul>
+      <h2 class="certificates__title block__title">Может, сертификаты есть?</h2>
+      <div class="slider">
+        <div class="slider__controls">
+          <button class="slider__button slider__button--prev" type="button">
+            <img src="img/icon-prev.svg" width="20" height="20" alt="">
+          </button>
+          <button class="slider__button slider__button--next" type="button">
+            <img src="img/icon-next.svg" alt="">
+          </button>
+        </div>
+        <div class="slider__wrapper">
+          <ul class="slider__list certificates__list">
+            <li class="certificates__item slider__item">
+              <img src="img/certificate1.jpg" width="300" alt="" class="certificate__image">
+            </li>
+            <li class="certificates__item slider__item">
+              <img src="img/certificate2.jpg" width="300" alt="" class="certificate__image">
+            </li>
+            <li class="certificates__item slider__item">
+              <img src="img/certificate3.jpg" width="300" alt="" class="certificate__image">
+            </li>
+            <li class="certificates__item slider__item">
+              <img src="img/certificate4.jpg" width="300" alt="" class="certificate__image">
+            </li>
+          </ul>
+        </div>
+      </div>
     </article>
   </main>
+
+  <script src="bundle.js"></script>
+  <script>
+    const rollupButtons = document.querySelectorAll(`.skills__item-rollup-btn`);
+    const skillsItems = document.querySelectorAll(`.skills__item`);
+    const pairs = [];
+    let i = 0;
+    for (const item of Array.from(skillsItems)) {
+      pairs.push({
+        skillItem: item,
+        rollupBtn: Array.from(rollupButtons)[i]
+      });
+      i++;
+    }
+
+    rollupButtons.forEach((button, index) => {
+      button.addEventListener(`click`, () => {
+        pairs[index].skillItem.classList.toggle(`skills__item--opened`);
+      });
+    });
+  </script>
 </body>
 </html>
