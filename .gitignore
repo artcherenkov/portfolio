@@ -1,2 +1,6 @@
 .idea
 .DS_store
+
+node_modules
+
+bundle.js.map

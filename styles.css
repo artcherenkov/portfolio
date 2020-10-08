@@ -64,15 +64,32 @@ body {
 
 .block__title {
   margin: 0;
+  position: absolute;
+  z-index: 20;
+  top: 0;
   text-align: center;
-  font-weight: normal;
   font-size: 24px;
   margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .block {
+  padding-top: 2.5em;
   font-size: 18px;
   line-height: 24px;
+  position: relative;
+}
+
+.block__title::after {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 10px;
+  bottom: 4px;
+  left: -5%;
+  z-index: -10;
+  background-color: #ffb800;
 }
 
 .header__wrapper {
@@ -101,12 +118,58 @@ body {
 }
 
 .skills__list .skills__item-extra-list {
-  display: none;
+  /*display: none;*/
+  overflow: hidden;
+  /*visibility: hidden;*/
+  max-height: 0;
   margin-left: 43px;
+  transition: max-height 0.6s linear;
+  /*transition: visibility 0.6s linear;*/
+
 }
 
-.skills__list--opened .skills__item-extra-list {
-  display: block;
+.skills__item--opened .skills__item-extra-list {
+  /*display: block;*/
+  visibility: unset;
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.6s linear;
+}
+
+.skills__item-rollup-btn img {
+  transform: rotate(0deg);
+  transition: 0.3s;
+}
+
+.skills__item--opened .skills__item-rollup-btn img {
+  transform: rotate(180deg);
+  transition: 0.6s;
+}
+
+.skills__item {
+  position: relative;
+
+}
+
+.skills__item-rollup-btn {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.skills__item-rollup-btn:hover,
+.slider__button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.skills__item-rollup-btn:active,
+.slider__button:active {
+  opacity: 0.3;
 }
 
 .skills__item-extra-item:first-child {
@@ -128,4 +191,65 @@ body {
 
 .studying__text:nth-of-type(2) {
   margin: 1em 0;
+}
+
+.certificates {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  max-width: 300px;
+  position: relative;
+  /*margin: 0 auto;*/
+}
+
+.slider__wrapper {
+  position: relative;
+
+  z-index: 1;
+  display: flex;
+  overflow: hidden;
+  margin: 0;
+}
+
+
+.slider__button {
+  position: absolute;
+  z-index: 10;
+  width: 25px;
+  height: 25px;
+  top: calc(50% - calc(25px/2));
+}
+
+.slider__button--prev {
+  left: -30px;
+}
+
+.slider__button--next {
+  right: -30px;
+}
+
+.slider__button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: white;
+
+}
+
+.certificates__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  left: 0;
+  width: 400%;
+  transition: transform 0.6s ease;
+  /*overflow: hidden;*/
 }
